@@ -1,0 +1,17 @@
+name: CI básico
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v3
+
+      - name: Mensaje de prueba
+        run: echo "CI funcionando correctamente"
