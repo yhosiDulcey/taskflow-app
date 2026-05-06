@@ -15,3 +15,12 @@ jobs:
 
       - name: Mensaje de prueba
         run: echo "CI funcionando correctamente"
+
+      - name: Verificar HTML
+        run: |
+          if grep -q "<html" index.html; then
+            echo "HTML válido"
+          else
+            echo "Error en HTML"
+            exit 1
+          fi
